@@ -3,55 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>走马灯</title>
+    <title>Document</title>
     <style>
       * {
         margin: 0;
         padding: 0;
       }
-      li {
-        list-style: none;
-      }
-      .box {
-        width: 600px;
-        height: 112px;
-        border: 5px solid #000;
-        margin: 100px auto;
+      .bg {
+        display: flex;
+        margin: 500px auto;
+        width: 1918px;
+        height: 878px;
+        background-image: url(../柱灭之刃.png);
         overflow: hidden;
       }
-      img {
-        display: block;
-        width: 200px;
-        height: 112px;
+      .bg .left,
+      .bg .right {
+        width: 50%;
+        height: 878px;
+        background-image: url(../上弦.jpg);
+        transition: all 1;
       }
-      .box ul {
-        display: flex;
-        animation: move 3s infinite linear;
+      .bg .right {
+        background-position: right 0;
       }
-      /* 无缝动画原理：复制开头图片到结尾位置（图片累加宽度=区域宽度） */
-      @keyframes move {
-        0% {
-          transform: translate(0);
-        }
-        100% {
-          transform: translate(-600px);
-        }
+      .bg:hover .left {
+        transform: translate(-100%);
       }
-      .box:hover ul {
-        animation-play-state: paused;
+      .bg:hover .right {
+        transform: translate(100%);
       }
     </style>
   </head>
   <body>
-    <div class="box">
-      <ul>
-        <li><img src="../宵宫1.jpg" alt="" /></li>
-        <li><img src="../宵宫3.jpg" alt="" /></li>
-        <li><img src="../宵宫2.jpg" alt="" /></li>
-        <li><img src="../宵宫1.jpg" alt="" /></li>
-        <li><img src="../宵宫3.jpg" alt="" /></li>
-        <li><img src="../宵宫2.jpg" alt="" /></li>
-      </ul>
+    <div class="bg">
+      <div class="left"></div>
+      <div class="right"></div>
     </div>
   </body>
 </html>
