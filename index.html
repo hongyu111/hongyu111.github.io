@@ -1,1 +1,57 @@
-<h1>hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>走马灯</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+      }
+      .box {
+        width: 600px;
+        height: 112px;
+        border: 5px solid #000;
+        margin: 100px auto;
+        overflow: hidden;
+      }
+      img {
+        display: block;
+        width: 200px;
+        height: 112px;
+      }
+      .box ul {
+        display: flex;
+        animation: move 3s infinite linear;
+      }
+      /* 无缝动画原理：复制开头图片到结尾位置（图片累加宽度=区域宽度） */
+      @keyframes move {
+        0% {
+          transform: translate(0);
+        }
+        100% {
+          transform: translate(-600px);
+        }
+      }
+      .box:hover ul {
+        animation-play-state: paused;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <ul>
+        <li><img src="../宵宫1.jpg" alt="" /></li>
+        <li><img src="../宵宫3.jpg" alt="" /></li>
+        <li><img src="../宵宫2.jpg" alt="" /></li>
+        <li><img src="../宵宫1.jpg" alt="" /></li>
+        <li><img src="../宵宫3.jpg" alt="" /></li>
+        <li><img src="../宵宫2.jpg" alt="" /></li>
+      </ul>
+    </div>
+  </body>
+</html>
