@@ -3,44 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-      .bg {
-        display: flex;
-        margin: 500px auto;
-        width: 1918px;
-        height: 878px;
-        background-image: url(/hongyu111/hongyu111.github.io/edit/柱灭之刃.png);
-        overflow: hidden;
-        background-color: pink;
-      }
-      .bg .left,
-      .bg .right {
-        width: 50%;
-        height: 878px;
-        background-image: url(/hongyu111/hongyu111.github.io/edit/上弦.jpg);
-        transition: all 1;
-        background-color: green;
-      }
-      .bg .right {
-        background-position: right 0;
-      }
-      .bg:hover .left {
-        transform: translate(-100%);
-      }
-      .bg:hover .right {
-        transform: translate(100%);
-      }
-    </style>
+    <title>咱们结婚吧</title>
+    <link rel="stylesheet" href="./咱们结婚吧.css" />
   </head>
   <body>
-    <div class="bg">
-      <div class="left"></div>
-      <div class="right"></div>
+    <div
+      class="video_exist play_yinfu"
+      id="audio_btn"
+      style="display: block; z-index: 999999"
+    >
+      <div id="yinfu" class="rotate"></div>
+      <audio
+        preload="auto"
+        autoplay=""
+        id="media"
+        src="./咱们结婚吧.mp3"
+        autoplay
+        preload
+        loop="loop"
+      ></audio>
     </div>
+    <canvas id="heart"></canvas>
+
+    <h1 id="text"></h1>
+    <script src="./咱们结婚吧.js"></script>
   </body>
 </html>
