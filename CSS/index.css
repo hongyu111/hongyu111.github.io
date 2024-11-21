@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+#heart {
+  width: 750px;
+  height: 750px;
+  animation: animate 1.2s infinite;
+}
+
+#text {
+  color: white;
+  font-size: 5em;
+  text-align: center;
+  text-shadow: 0 0 0.05em #fff, 0 0 0.2em #ee3e3e, 0 0 0.3em #f80808;
+  margin-top: -0.6em;
+  user-select: none;
+  position: absolute;
+  animation: animate 1.2s infinite;
+}
+
+#audio_btn {
+  position: fixed;
+  right: 8px;
+  top: 0;
+  z-index: 200;
+  display: none;
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.play_yinfu {
+  position: fixed;
+  right: 10px;
+  float: right;
+  top: 1px;
+  width: 30px;
+  height: 30px;
+  background-image: url("/images/music.gif");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 60px 60px;
+}
+
+.rotate {
+  position: fixed;
+  right: 10px;
+  float: right;
+  top: 1px;
+  width: 30px;
+  height: 30px;
+  background-size: 100% 100%;
+  background-image: url("/images/music_off.png");
+  -webkit-animation: rotating 1.2s linear infinite;
+  -moz-animation: rotating 1.2s linear infinite;
+  -o-animation: rotating 1.2s linear infinite;
+  animation: rotating 1.2s linear infinite;
+}
+
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(0.8);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #heart {
+    transform: scale(0.5);
+    animation: animate-small 1.2s infinite;
+  }
+
+  #text {
+    font-size: 4em;
+    margin-top: -0.3em;
+
+    animation: animate-small 1.2s infinite;
+  }
+
+  @keyframes animate-small {
+    0% {
+      transform: scale(0.5);
+    }
+    30% {
+      transform: scale(0.4);
+    }
+    60% {
+      transform: scale(0.6);
+    }
+    100% {
+      transform: scale(0.5);
+    }
+  }
+}
+
+@-moz-keyframes rotating {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+.off {
+  position: fixed;
+  right: 10px;
+  float: right;
+  top: 1px;
+  background-size: 100% 100%;
+  background-image: url("./th.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
